@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MeinApp extends AppCompatActivity {
 
@@ -15,6 +18,24 @@ public class MeinApp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mein_app);
+
+
+
+        Button btn = (Button) findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText edt1 = (EditText) findViewById(R.id.editText);
+                String s1;
+                s1 = edt1.getText().toString();
+                TextView tv1 = (TextView) findViewById(R.id.textView2);
+                tv1.setText("欢迎你：" + s1);
+            }
+        });
+
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
